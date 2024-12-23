@@ -5,20 +5,20 @@ import (
 	"math"
 )
 
-func miniMaxSum(arr []int32) {
-	total := int32(0)
+func miniMaxSum(arr []int64) {
+	total := int64(0)
 
 	for _, num := range arr {
-		total += num
+		total += int64(num)
 	}
 
-	list := []int32{}
+	list := []int64{}
 
 	for _, num := range arr {
-		list = append(list, total-num)
+		list = append(list, total-int64(num))
 	}
 
-	min, max := int32(math.MaxInt32), int32(0)
+	min, max := int64(math.MaxInt64), int64(0)
 
 	for _, num := range list {
 		if num < min {
@@ -34,4 +34,5 @@ func miniMaxSum(arr []int32) {
 }
 
 func main() {
+	miniMaxSum([]int64{793810624, 895642170, 685903712, 623789054, 468592370})
 }
